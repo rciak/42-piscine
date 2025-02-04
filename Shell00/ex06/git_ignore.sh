@@ -1,2 +1,2 @@
 #!/bin/bash
-git status --ignored | grep $'\t' | sed 's/^\t*//g'
+git ls-files --others --ignored --exclude-standard
