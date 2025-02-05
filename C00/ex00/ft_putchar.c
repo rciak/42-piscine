@@ -3,13 +3,13 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: reciak <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/05 13:16:03 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/05 18:18:49 by reciak           ###   ########.fr       */
+/*   Created: 2025/02/05 20:11:19 by reciak            #+#    #+#             */
+/*   Updated: 2025/02/05 20:11:31 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-void ft_putchar(char c);
+#include <unistd.h>
 
 void ft_putchar(char c)
 {
