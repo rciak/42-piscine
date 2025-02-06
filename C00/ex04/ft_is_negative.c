@@ -6,12 +6,12 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/06 17:30:58 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/06 17:42:05 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/06 18:26:03 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
 
-void ft_is_negative(int n)
+void	ft_is_negative(int n)
 {
 	if (n < 0)
 		write(1, "N", 1);
