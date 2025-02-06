@@ -6,12 +6,12 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/05 20:11:19 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/05 20:11:31 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/06 13:03:32 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include <unistd.h>
 
-void ft_putchar(char c)
+void	ft_putchar(char c)
 {
 	write(1, &c, 1);
 }
