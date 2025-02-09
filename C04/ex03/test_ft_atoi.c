@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   test_ft_atoi.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
+/*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 11:48:21 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/09 12:59:37 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/09 19:09:10 by Rene Ciak        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 
 	if (argc != 1 + 1)
 	{
-		write(2, "Arguments!", 10);
+		write(2, "Arguments!\n", 11);
 		return (ARGC_WRONG);
 	}
 	str = argv[1];
