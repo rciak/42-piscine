@@ -6,7 +6,7 @@
 /*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 11:47:44 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/09 19:15:14 by Rene Ciak        ###   ########.fr       */
+/*   Updated: 2025/02/09 19:27:32 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,30 +24,27 @@
 
 int	ft_atoi(char *s)
 {
-//	Skip white space, see isspace(3)
-//  Skip '+-' -> adopt sig
-//  if then we have a digit: Start extracting number, else return 0:
-	int 		sign_factor;
+	int			sign_factor;
 	long long	nbr;
 
 	if (s == NULL)
 		return (0);
-	while (*s == ' ' || *s == '\n' || *s == '\t' 
+	while (*s == ' ' || *s == '\n' || *s == '\t'
 		|| *s == '\v' || *s == '\f' || *s == '\r' )
 		s++;
 	if (*s == '\0' || !(*s == '+' || *s == '-' || ('0' <= *s && *s <= '9')))
-		return 0;
+		return (0);
 	sign_factor = 1;
 	if (*s == '-')
 		sign_factor = -1;
 	if (*s == '+' || *s == '-')
 		s++;
 	if (!('0' <= *s && *s <= '9'))
-		return 0;
+		return (0);
 	nbr = 0;
 	while ('0' <= *s && *s <= '9')
 	{
-		nbr = 10 * nbr + (*s - '0'); // ToDo: Check if *s - '0' is converted to long long
+		nbr = 10 * nbr + (*s - '0');
 		s++;
 	}
 	nbr = sign_factor * nbr;
