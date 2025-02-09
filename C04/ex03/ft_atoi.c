@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
+/*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 11:47:44 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/09 12:55:40 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/09 17:35:01 by Rene Ciak        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,15 @@
 // --> Looking at  atol  might be worthwhile
 #include <stdlib.h>       // Def. NULL
 
+
 int	ft_atoi(char *str)
 {
+//	Skip white space, see isspace(3)
+//  Skip '+-' -> adopt sig
+//  if then we have a digit: Start extracting number, else return 0:
+
+
+	while (*str != '\0' )
 	str = NULL;
 	return (0);
 }
