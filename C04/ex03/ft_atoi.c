@@ -6,7 +6,7 @@
 /*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 11:47:44 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/09 17:35:01 by Rene Ciak        ###   ########.fr       */
+/*   Updated: 2025/02/09 18:53:49 by Rene Ciak        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,14 +20,37 @@
 #include <stdlib.h>       // Def. NULL
 
 
-int	ft_atoi(char *str)
+
+
+
+int	ft_atoi(char *s)
 {
 //	Skip white space, see isspace(3)
 //  Skip '+-' -> adopt sig
 //  if then we have a digit: Start extracting number, else return 0:
+	int 		sign_factor;
+	long long	nbr;
 
 
-	while (*str != '\0' )
-	str = NULL;
-	return (0);
+
+
+
+	st_skip_white_space(&s);
+	if (*s == '\0' || !(*s == '+' || *s == '-' || ('0' <= *s && *s <= '9')))
+		return 0;
+	sign_factor = 1;
+	if (*s == '-')
+		sign_factor == -1;
+	if (*s == '+' || *s == '-')
+		s++;
+	if (!('0' <= *s && *s <= '9'))
+		return 0;
+	nbr = 0;
+	while ('0' <= *s && *s <= '9')
+	{
+		nbr = 10 * nbr + (*s - '0'); // ToDo: Check if *s - '0' is converted to long long
+		s++;
+	}
+	nbr = sign_factor * nbr;
+	return ((int) nbr);
 }
