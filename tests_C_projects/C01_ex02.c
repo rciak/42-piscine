@@ -6,18 +6,18 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/13 23:43:46 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/13 23:56:11 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/14 00:00:00 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-void ft_swap(int *a, int *b);
+void	ft_swap(int *a, int *b);
 
 int	main(void)
 {
-	int x;
-	int y;
+	int	x;
+	int	y;
 
 	x = -1;
 	y = 4;
