@@ -6,7 +6,7 @@
 /*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 10:01:53 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/16 18:12:00 by leberton         ###   ########.fr       */
+/*   Updated: 2025/02/16 20:14:21 by leberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ void	set_the_matrix(char the_matrix[4][4][4])
 	st_fill(the_matrix[3][2], "3412");
 	st_fill(the_matrix[3][3], "4123");
 }
+
 void	set_row_perm(char row_perm[6][4])
 {
 	st_fill(row_perm[0], "0123");
@@ -50,6 +51,7 @@ void	set_row_perm(char row_perm[6][4])
 	st_fill(row_perm[4], "0312");
 	st_fill(row_perm[5], "0321");
 }
+
 void	set_col_perm(char col_perm[24][4])
 {
 	st_fill(col_perm[0], "0123");

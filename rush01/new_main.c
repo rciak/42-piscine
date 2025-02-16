@@ -6,7 +6,7 @@
 /*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 22:52:51 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/16 19:51:39 by leberton         ###   ########.fr       */
+/*   Updated: 2025/02/16 20:15:09 by leberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 
 static int	st_check_input_validity(int argc, char *argv);
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	char		user_boundaries[NUM_LOOKING_DIRECTIONS][SIZE];
 	char		solution[SIZE][SIZE];
 	char		the_matrix[NUM_OF_BASIC_MATRICES][SIZE][SIZE];
-	t_perm	gen_perms;
+	t_perm		gen_perms;
 
 	if (!st_check_input_validity(argc, argv[1]))
 	{
@@ -58,6 +58,7 @@ static int	secure_strlen(char *str)
 static int	st_check_input_validity(int argc, char *arg)
 {
 	int	i;
+
 	if (argc != 2)
 		return (0);
 	if (secure_strlen(arg) != 31)
@@ -71,7 +72,5 @@ static int	st_check_input_validity(int argc, char *arg)
 			return (0);
 		i++;
 	}
-	// if (!check_columns(arg) || !check_rows(arg))
-	// 	return (-1);
 	return (1);
 }

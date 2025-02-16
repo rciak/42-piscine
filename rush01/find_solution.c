@@ -6,21 +6,25 @@
 /*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 11:06:30 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/16 18:37:17 by leberton         ###   ########.fr       */
+/*   Updated: 2025/02/16 20:20:15 by leberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush01.h"
 
-static int	st_iter_perm(char b_mat[4][4], char u_bnd[4][4], char sol[4][4], t_perm perm);
-static void	st_permute_rows(char r_permed_matrix[4][4], char *perm, char b_mat[4][4]);
-static void	st_permute_cols(char c_permed_matrix[4][4], char *perm, char r_p_mat[4][4]);
+static int	st_iter_perm(char b_mat[4][4], char u_bnd[4][4],
+				char sol[4][4], t_perm perm);
+static void	st_permute_rows(char r_permed_matrix[4][4],
+				char *perm, char b_mat[4][4]);
+static void	st_permute_cols(char c_permed_matrix[4][4], char *perm,
+				char r_p_mat[4][4]);
 static void	st_set_solution(char sol[4][4], char c_permed[4][4]);
 
-int		find_solution(char u_bound[4][4], char sol[4][4], char matrix[4][4][4], t_perm perm)
+int	find_solution(char u_bound[4][4], char sol[4][4],
+					char matrix[4][4][4], t_perm perm)
 {
 	unsigned char	i;
-	
+
 	i = 0;
 	while (i < NUM_OF_BASIC_MATRICES)
 	{
@@ -31,7 +35,8 @@ int		find_solution(char u_bound[4][4], char sol[4][4], char matrix[4][4][4], t_p
 	return (0);
 }
 
-static int	st_iter_perm(char b_mat[4][4], char u_bnd[4][4], char sol[4][4], t_perm perm)
+static int	st_iter_perm(char b_mat[4][4], char u_bnd[4][4],
+						char sol[4][4], t_perm perm)
 {
 	unsigned char	j;
 	unsigned char	k;
@@ -60,8 +65,8 @@ static int	st_iter_perm(char b_mat[4][4], char u_bnd[4][4], char sol[4][4], t_pe
 	return (0);
 }
 
-
-static void	st_permute_rows(char r_permed_matrix[4][4], char *perm, char b_mat[4][4])
+static void	st_permute_rows(char r_permed_matrix[4][4], char *perm,
+							char b_mat[4][4])
 {
 	unsigned int	x;
 
@@ -76,7 +81,8 @@ static void	st_permute_rows(char r_permed_matrix[4][4], char *perm, char b_mat[4
 	}
 }
 
-static void	st_permute_cols(char c_permed_matrix[4][4], char *perm, char r_p_mat[4][4])
+static void	st_permute_cols(char c_permed_matrix[4][4], char *perm,
+							char r_p_mat[4][4])
 {
 	unsigned int	y;
 

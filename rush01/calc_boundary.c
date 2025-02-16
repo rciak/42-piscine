@@ -6,7 +6,7 @@
 /*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 12:23:55 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/16 18:34:54 by leberton         ###   ########.fr       */
+/*   Updated: 2025/02/16 20:06:08 by leberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,3 @@ void	store_user_boundaries(char user_boundaries[4][4], char *argv)
 	user_boundaries[LOOK_FROM_EAST][2] = argv[28] - '0';
 	user_boundaries[LOOK_FROM_EAST][3] = argv[30] - '0';
 }
-
-
-
