@@ -6,7 +6,7 @@
 /*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 11:06:30 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/16 12:21:42 by Rene Ciak        ###   ########.fr       */
+/*   Updated: 2025/02/16 16:01:16 by Rene Ciak        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int		find_solution(char **u_bound, char **sol, char ***matrix, t_perm perm)
 	return (0);
 }
 
-static int	st_iter_perm(char **b_mat, u_bound, sol, perm)
+static int	st_iter_perm(char **b_mat, char **u_bnd, char **sol, t_pterm perm)
 {
 	unsigned char	j;
 	unsigned char	k;
@@ -60,22 +60,51 @@ static int	st_iter_perm(char **b_mat, u_bound, sol, perm)
 	return (0);
 }
 
-static int	st_iter_perm(char **b_mat, char **u_bnd, char **sol, t_pterm perm)
-{
-
-}
 
 static void	st_permute_rows(char **r_permed_matrix, char *perm, char **b_mat)
 {
+	unsigned int	x;
 
+	x = 0;
+	while (x < SIZE)
+	{
+		r_permed_matrix[0][x] = b_mat[perm[0]][x];
+		r_permed_matrix[1][x] = b_mat[perm[1]][x];
+		r_permed_matrix[2][x] = b_mat[perm[2]][x];
+		r_permed_matrix[3][x] = b_mat[perm[3]][x];
+		x++;
+	}
 }
 
 static void	st_permute_cols(char **c_permed_matrix, char *perm, char **r_p_mat)
 {
+	unsigned int	y;
 
+	y = 0;
+	while (y < SIZE)
+	{
+		c_permed_matrix[y][0] = r_p_mat[y][perm[0]];
+		c_permed_matrix[y][1] = r_p_mat[y][perm[1]];
+		c_permed_matrix[y][2] = r_p_mat[y][perm[2]];
+		c_permed_matrix[y][3] = r_p_mat[y][perm[3]];
+		y++;
+	}
 }
 
 static void	st_set_solution(char **sol, char **c_permed)
 {
-	
+	unsigned int i;
+	unsigned int j;
+
+	i = 0;
+	while (i < SIZE)
+	{
+		j = 0;
+		while (j < SIZE)
+		{
+			sol[i][j] = c_permed[i][j];
+			j++;
+		}
+		i++;
+	}
 }
