@@ -6,7 +6,7 @@
 /*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 10:01:53 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/16 17:08:26 by leberton         ###   ########.fr       */
+/*   Updated: 2025/02/16 18:12:00 by leberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	set_the_matrix(char the_matrix[4][4][4])
 {
 	st_fill(the_matrix[0][0], "1234");
 	st_fill(the_matrix[0][1], "2143");
-	st_fill(the_matrix[0][2], "2143");
+	st_fill(the_matrix[0][2], "3412");
 	st_fill(the_matrix[0][3], "4321");
 	st_fill(the_matrix[1][0], "1234");
 	st_fill(the_matrix[1][1], "2143");
