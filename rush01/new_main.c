@@ -6,7 +6,7 @@
 /*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 22:52:51 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/16 17:07:27 by leberton         ###   ########.fr       */
+/*   Updated: 2025/02/16 19:42:08 by leberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ int main(int argc, char **argv)
 
 	if (!st_check_input_validity(argc, argv[1]))
 	{
-		write(2, "Error\n", 6);
-		return (-1);
+		write(1, "Error\n", 6);
+		return (2);
 	}
 	store_user_boundaries(user_boundaries, argv[1]);
 	reset_matrix(solution);
@@ -34,19 +34,40 @@ int main(int argc, char **argv)
 	set_col_perm(gen_perms.col_perm);
 	if (!find_solution(user_boundaries, solution, the_matrix, gen_perms))
 	{
-		write(2, "Error\n", 6);
-		return (-2);
+		write(1, "Error\n", 6);
+		return (3);
 	}
 	print_solution(solution);
-	write(1, "\n", 1);
 	return (0);
 }
 
-static int	st_check_input_validity(int argc, char *argv)
+static int	ft_strlen(char *str)
 {
+	int	i;
+
+	i = 0;
+	while (str[i])
+		i++;
+	return (i);
+}
+
+static int	st_check_input_validity(int argc, char *arg)
+{
+	int	i;
 	if (argc != 2)
-		return (-1);
-	if (!check_columns(argv) || !check_rows(argv))
-		return (-1);
+		return (0);
+	if (ft_strlen(arg) != 31)
+		return (0);
+	i = 0;
+	while (arg[i])
+	{
+		if (i % 2 == 0 && !(arg[i] >= '1' && arg[i] <= '4'))
+			return (0);
+		if (i % 2 == 1 && (arg[i] != ' '))
+			return (0);
+		i++;
+	}
+	// if (!check_columns(arg) || !check_rows(arg))
+	// 	return (-1);
 	return (1);
 }
