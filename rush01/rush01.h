@@ -6,7 +6,7 @@
 /*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 22:42:28 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/16 11:07:59 by Rene Ciak        ###   ########.fr       */
+/*   Updated: 2025/02/16 12:07:49 by Rene Ciak        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 # define SIZE 4
 # define NUM_LOOKING_DIRECTIONS 4
 # define NUM_OF_BASIC_MATRICES 4
+# define NUM_ROW_PERMS 6
+# define NUM_COL_PERMS 24
 # define LOOK_FROM_NORTH 0
 # define LOOK_FROM_SOUTH 1
 # define LOOK_FROM_WEST 2
