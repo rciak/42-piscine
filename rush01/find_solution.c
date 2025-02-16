@@ -6,7 +6,7 @@
 /*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 11:06:30 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/16 16:01:16 by Rene Ciak        ###   ########.fr       */
+/*   Updated: 2025/02/16 16:53:47 by Rene Ciak        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,8 +93,8 @@ static void	st_permute_cols(char **c_permed_matrix, char *perm, char **r_p_mat)
 
 static void	st_set_solution(char **sol, char **c_permed)
 {
-	unsigned int i;
-	unsigned int j;
+	unsigned int	i;
+	unsigned int	j;
 
 	i = 0;
 	while (i < SIZE)
