@@ -6,7 +6,7 @@
 /*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 22:52:51 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/16 11:11:17 by Rene Ciak        ###   ########.fr       */
+/*   Updated: 2025/02/16 14:26:54 by leberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,7 @@ static int	st_check_input_validity(int argc, char **argv)
 {
 	if (argc != 2)
 		return (-1);
-	//TODO: check the string argv[1] ...
+	if (!check_columns(argv[1]) || !check_rows(argv[1]))
+		return (-1);
+	return (1);
 }

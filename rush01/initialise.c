@@ -6,16 +6,11 @@
 /*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 10:01:53 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/16 10:05:47 by Rene Ciak        ###   ########.fr       */
+/*   Updated: 2025/02/16 14:43:17 by leberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include rush01.h
-
-int		check_input_validity(int argc, char **argv)
-{
-	
-}
 
 void	clear_solution(char **solution)
 {

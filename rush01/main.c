@@ -6,7 +6,7 @@
 /*   By: leberton <leberton@student.42vienna.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 15:39:27 by leberton          #+#    #+#             */
-/*   Updated: 2025/02/15 17:47:34 by leberton         ###   ########.fr       */
+/*   Updated: 2025/02/15 19:17:11 by leberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -159,6 +159,8 @@ void calc_down_border(int *count)
 	}
 }
 
+#include <string.h>
+
 int main(int argc, char **argv)
 {
 	if (argc != 2)
@@ -188,26 +190,17 @@ int main(int argc, char **argv)
 	for (int i = 0; i < 4; i++)
 		printf("Upper border: %d - ", count[i]);
 	printf("\n");
-	count[0] = 0;
-	count[1] = 0;
-	count[2] = 0;
-	count[3] = 0;
+	memset(count, 0, sizeof(count));
 	calc_left_border(count);
 	for (int i = 0; i < 4; i++)
 		printf("Left border: %d - ", count[i]);
 	printf("\n");
-	count[0] = 0;
-	count[1] = 0;
-	count[2] = 0;
-	count[3] = 0;
+	memset(count, 0, sizeof(count));
 	calc_down_border(count);
 	for (int i = 0; i < 4; i++)
 		printf("Down border: %d - ", count[i]);
 	printf("\n");
-	count[0] = 0;
-	count[1] = 0;
-	count[2] = 0;
-	count[3] = 0;
+	memset(count, 0, sizeof(count));
 	calc_right_border(count);
 	for (int i = 0; i < 4; i++)
 		printf("Right border: %d - ", count[i]);
