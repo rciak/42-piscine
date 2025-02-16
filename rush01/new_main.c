@@ -6,7 +6,7 @@
 /*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 22:52:51 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/16 19:42:08 by leberton         ###   ########.fr       */
+/*   Updated: 2025/02/16 19:51:39 by leberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,17 @@ int main(int argc, char **argv)
 	return (0);
 }
 
-static int	ft_strlen(char *str)
+static int	secure_strlen(char *str)
 {
 	int	i;
 
 	i = 0;
 	while (str[i])
+	{
 		i++;
+		if (i > 40)
+			return (i);
+	}
 	return (i);
 }
 
@@ -56,7 +60,7 @@ static int	st_check_input_validity(int argc, char *arg)
 	int	i;
 	if (argc != 2)
 		return (0);
-	if (ft_strlen(arg) != 31)
+	if (secure_strlen(arg) != 31)
 		return (0);
 	i = 0;
 	while (arg[i])
