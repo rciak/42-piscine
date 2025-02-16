@@ -6,7 +6,7 @@
 /*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 11:06:30 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/16 17:30:12 by leberton         ###   ########.fr       */
+/*   Updated: 2025/02/16 17:40:33 by leberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,10 +68,10 @@ static void	st_permute_rows(char r_permed_matrix[4][4], char *perm, char b_mat[4
 	x = 0;
 	while (x < SIZE)
 	{
-		r_permed_matrix[0][x] = b_mat[perm[0]][x];
-		r_permed_matrix[1][x] = b_mat[perm[1]][x];
-		r_permed_matrix[2][x] = b_mat[perm[2]][x];
-		r_permed_matrix[3][x] = b_mat[perm[3]][x];
+		r_permed_matrix[0][x] = b_mat[(int)perm[0]][x];
+		r_permed_matrix[1][x] = b_mat[(int)perm[1]][x];
+		r_permed_matrix[2][x] = b_mat[(int)perm[2]][x];
+		r_permed_matrix[3][x] = b_mat[(int)perm[3]][x];
 		x++;
 	}
 }
@@ -83,10 +83,10 @@ static void	st_permute_cols(char c_permed_matrix[4][4], char *perm, char r_p_mat
 	y = 0;
 	while (y < SIZE)
 	{
-		c_permed_matrix[y][0] = r_p_mat[y][perm[0]];
-		c_permed_matrix[y][1] = r_p_mat[y][perm[1]];
-		c_permed_matrix[y][2] = r_p_mat[y][perm[2]];
-		c_permed_matrix[y][3] = r_p_mat[y][perm[3]];
+		c_permed_matrix[y][0] = r_p_mat[y][(int)perm[0]];
+		c_permed_matrix[y][1] = r_p_mat[y][(int)perm[1]];
+		c_permed_matrix[y][2] = r_p_mat[y][(int)perm[2]];
+		c_permed_matrix[y][3] = r_p_mat[y][(int)perm[3]];
 		y++;
 	}
 }

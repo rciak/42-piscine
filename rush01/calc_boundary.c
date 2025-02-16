@@ -6,13 +6,13 @@
 /*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 12:23:55 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/16 17:25:30 by leberton         ###   ########.fr       */
+/*   Updated: 2025/02/16 17:41:35 by leberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush01.h"
 
-int	calc_boundary(char boundary[4][4], char c_permed_matrix[4][4])
+void	calc_boundary(char boundary[4][4], char c_permed_matrix[4][4])
 {
 	calc_upper_border(boundary[LOOK_FROM_NORTH], c_permed_matrix);
 	calc_down_border(boundary[LOOK_FROM_SOUTH], c_permed_matrix);

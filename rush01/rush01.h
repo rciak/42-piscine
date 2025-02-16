@@ -6,7 +6,7 @@
 /*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 22:42:28 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/16 17:35:34 by leberton         ###   ########.fr       */
+/*   Updated: 2025/02/16 17:41:35 by leberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,6 @@ void 	calc_left_border(char *bound_part, char matrix[4][4]);
 void 	calc_right_border(char *bound_part, char matrix[4][4]);
 void	calc_upper_border(char *bound_part, char matrix[4][4]);
 void	calc_down_border(char *bound_part, char matrix[4][4]);
-int		calc_boundary(char boundary[4][4], char c_permed_matrix[4][4]);
+void		calc_boundary(char boundary[4][4], char c_permed_matrix[4][4]);
 int		is_matching(char boundary[4][4], char u_bound[4][4]);
 #endif
