@@ -6,15 +6,15 @@
 /*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 10:01:53 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/16 15:34:18 by Rene Ciak        ###   ########.fr       */
+/*   Updated: 2025/02/16 17:08:26 by leberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include rush01.h
+#include "rush01.h"
 
 static void	st_fill(char *line, char *values);
 
-void	reset_matrix(char **solution)
+void	reset_matrix(char solution[4][4])
 {
 	st_fill(solution[0], "0000");
 	st_fill(solution[1], "0000");
@@ -22,7 +22,7 @@ void	reset_matrix(char **solution)
 	st_fill(solution[3], "0000");
 }
 
-void	set_the_matrix(char ***the_matrix)
+void	set_the_matrix(char the_matrix[4][4][4])
 {
 	st_fill(the_matrix[0][0], "1234");
 	st_fill(the_matrix[0][1], "2143");
@@ -41,7 +41,7 @@ void	set_the_matrix(char ***the_matrix)
 	st_fill(the_matrix[3][2], "3412");
 	st_fill(the_matrix[3][3], "4123");
 }
-void	set_row_perm(char **row_perm)
+void	set_row_perm(char row_perm[6][4])
 {
 	st_fill(row_perm[0], "0123");
 	st_fill(row_perm[1], "0132");
@@ -50,7 +50,7 @@ void	set_row_perm(char **row_perm)
 	st_fill(row_perm[4], "0312");
 	st_fill(row_perm[5], "0321");
 }
-void	set_col_perm(char **col_perm)
+void	set_col_perm(char col_perm[24][4])
 {
 	st_fill(col_perm[0], "0123");
 	st_fill(col_perm[1], "0132");
@@ -80,8 +80,8 @@ void	set_col_perm(char **col_perm)
 
 static void	st_fill(char *line, char *values)
 {
-	line[0] = value[0] - '0';
-	line[1] = value[1] - '0';
-	line[2] = value[2] - '0';
-	line[3] = value[3] - '0';
+	line[0] = values[0] - '0';
+	line[1] = values[1] - '0';
+	line[2] = values[2] - '0';
+	line[3] = values[3] - '0';
 }

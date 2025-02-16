@@ -6,18 +6,18 @@
 /*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 11:06:30 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/16 16:53:47 by Rene Ciak        ###   ########.fr       */
+/*   Updated: 2025/02/16 17:30:12 by leberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush01.h"
 
-static int	st_iter_perm(char **b_mat, char **u_bnd, char **sol, t_pterm perm);
-static void	st_permute_rows(char **r_permed_matrix, char *perm, char **b_mat);
-static void	st_permute_cols(char **c_permed_matrix, char *perm, char **r_p_mat);
-static void	st_set_solution(char **sol, char **c_permed);
+static int	st_iter_perm(char b_mat[4][4], char u_bnd[4][4], char sol[4][4], t_perm perm);
+static void	st_permute_rows(char r_permed_matrix[4][4], char *perm, char b_mat[4][4]);
+static void	st_permute_cols(char c_permed_matrix[4][4], char *perm, char r_p_mat[4][4]);
+static void	st_set_solution(char sol[4][4], char c_permed[4][4]);
 
-int		find_solution(char **u_bound, char **sol, char ***matrix, t_perm perm)
+int		find_solution(char u_bound[4][4], char sol[4][4], char matrix[4][4][4], t_perm perm)
 {
 	unsigned char	i;
 	
@@ -31,7 +31,7 @@ int		find_solution(char **u_bound, char **sol, char ***matrix, t_perm perm)
 	return (0);
 }
 
-static int	st_iter_perm(char **b_mat, char **u_bnd, char **sol, t_pterm perm)
+static int	st_iter_perm(char b_mat[4][4], char u_bnd[4][4], char sol[4][4], t_perm perm)
 {
 	unsigned char	j;
 	unsigned char	k;
@@ -48,9 +48,9 @@ static int	st_iter_perm(char **b_mat, char **u_bnd, char **sol, t_pterm perm)
 		{
 			st_permute_cols(c_permed_matrix, perm.col_perm[k], r_permed_matrix);
 			calc_boundary(boundary, c_permed_matrix);
-			if (is_matching(boundary, u_bound))
+			if (is_matching(boundary, u_bnd))
 			{
-				st_set_solution(sol, c_permed);
+				st_set_solution(sol, c_permed_matrix);
 				return (1);
 			}
 			k++;
@@ -61,7 +61,7 @@ static int	st_iter_perm(char **b_mat, char **u_bnd, char **sol, t_pterm perm)
 }
 
 
-static void	st_permute_rows(char **r_permed_matrix, char *perm, char **b_mat)
+static void	st_permute_rows(char r_permed_matrix[4][4], char *perm, char b_mat[4][4])
 {
 	unsigned int	x;
 
@@ -76,7 +76,7 @@ static void	st_permute_rows(char **r_permed_matrix, char *perm, char **b_mat)
 	}
 }
 
-static void	st_permute_cols(char **c_permed_matrix, char *perm, char **r_p_mat)
+static void	st_permute_cols(char c_permed_matrix[4][4], char *perm, char r_p_mat[4][4])
 {
 	unsigned int	y;
 
@@ -91,7 +91,7 @@ static void	st_permute_cols(char **c_permed_matrix, char *perm, char **r_p_mat)
 	}
 }
 
-static void	st_set_solution(char **sol, char **c_permed)
+static void	st_set_solution(char sol[4][4], char c_permed[4][4])
 {
 	unsigned int	i;
 	unsigned int	j;

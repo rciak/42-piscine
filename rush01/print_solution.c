@@ -6,14 +6,14 @@
 /*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 11:06:45 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/16 16:53:26 by Rene Ciak        ###   ########.fr       */
+/*   Updated: 2025/02/16 16:58:16 by leberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include "rush01.h"
 
-void	print_solution(char **solution)
+void	print_solution(char solution[4][4])
 {
 	char			c;
 	unsigned int	i;

@@ -6,13 +6,13 @@
 /*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 12:23:48 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/16 16:53:51 by Rene Ciak        ###   ########.fr       */
+/*   Updated: 2025/02/16 17:29:15 by leberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush01.h"
 
-int		is_matching(char **boundary, char **u_bound)
+int		is_matching(char boundary[4][4], char u_bound[4][4])
 {
 	unsigned int	i;
 	unsigned int	j;

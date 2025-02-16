@@ -6,14 +6,14 @@
 /*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 12:57:32 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/16 13:20:25 by Rene Ciak        ###   ########.fr       */
+/*   Updated: 2025/02/16 17:36:08 by leberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 
-static int	st_is_bigger_than_all_previous(int	*seq, int x);
+static int	st_is_bigger_than_all_previous(char	seq[4], int x);
 
-void calc_left_border(char *bound_part, char **matrix)
+void calc_left_border(char *bound_part, char matrix[4][4])
 {
 	int y;
 	int x;
@@ -36,11 +36,11 @@ void calc_left_border(char *bound_part, char **matrix)
 	}
 }
 
-void calc_right_border(char *bound_part, char **matrix)
+void calc_right_border(char *bound_part, char matrix[4][4])
 {
 	int y;
 	int x;
-	int	row[4];
+	char	row[4];
 
 	y = 0;
 	bound_part[0] = 0;
@@ -65,11 +65,11 @@ void calc_right_border(char *bound_part, char **matrix)
 }
 
 
-void calc_upper_border(char *bound_part, char **matrix)
+void calc_upper_border(char *bound_part, char matrix[4][4])
 {
 	int x;
 	int y;
-	int	column[4];
+	char	column[4];
 
 	x = 0;
 	bound_part[0] = 0;
@@ -94,11 +94,11 @@ void calc_upper_border(char *bound_part, char **matrix)
 	}
 }
 
-void calc_down_border(char *bound_part, char **matrix)
+void calc_down_border(char *bound_part, char matrix[4][4])
 {
 	int x;
 	int y;
-	int	column[4];
+	char	column[4];
 
 	x = 0;
 	bound_part[0] = 0;
@@ -122,7 +122,7 @@ void calc_down_border(char *bound_part, char **matrix)
 	}
 }
 
-static int	st_is_bigger_than_all_previous(int	*seq, int x)
+static int	st_is_bigger_than_all_previous(char	seq[4], int x)
 {
 	if (x == 0)
 		return (1);

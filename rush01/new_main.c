@@ -6,13 +6,14 @@
 /*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 22:52:51 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/16 16:17:56 by Rene Ciak        ###   ########.fr       */
+/*   Updated: 2025/02/16 17:07:27 by leberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush01.h"
+#include <unistd.h>
 
-static int	st_check_input_validity(int argc, char **argv);
+static int	st_check_input_validity(int argc, char *argv);
 
 int main(int argc, char **argv)
 {
@@ -41,11 +42,11 @@ int main(int argc, char **argv)
 	return (0);
 }
 
-static int	st_check_input_validity(int argc, char **argv)
+static int	st_check_input_validity(int argc, char *argv)
 {
 	if (argc != 2)
 		return (-1);
-	if (!check_columns(argv[1]) || !check_rows(argv[1]))
+	if (!check_columns(argv) || !check_rows(argv))
 		return (-1);
 	return (1);
 }

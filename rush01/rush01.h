@@ -6,7 +6,7 @@
 /*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 22:42:28 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/16 15:30:02 by Rene Ciak        ###   ########.fr       */
+/*   Updated: 2025/02/16 17:35:34 by leberton         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,13 +34,17 @@ typedef struct s_gen_perms
 
 int		check_columns(char *str);
 int		check_rows(char *str);
-void	store_user_boundaries(char **user_boundaries, char **argv);
-void	reset_matrix(char **solution);
-void	set_the_matrix(char ***the_matrix);
-void	set_row_perm(char **row_perm);
-void	set_col_perm(char **col_perm);
-int		find_solution(char **u_bound, char **sol, char ***matrix, t_perm perm);
-void	print_solution(char **solution);
-int		calc_boundary(char **boundary, char **c_permed_matrix);
-int		is_matching(char **boundary, char **u_bound);
+void	store_user_boundaries(char user_boundaries[4][4], char *argv);
+void	reset_matrix(char solution[4][4]);
+void	set_the_matrix(char the_matrix[4][4][4]);
+void	set_row_perm(char row_perm[6][4]);
+void	set_col_perm(char col_perm[24][4]);
+int		find_solution(char u_bound[4][4], char sol[4][4], char matrix[4][4][4], t_perm perm);
+void	print_solution(char solution[4][4]);
+void 	calc_left_border(char *bound_part, char matrix[4][4]);
+void 	calc_right_border(char *bound_part, char matrix[4][4]);
+void	calc_upper_border(char *bound_part, char matrix[4][4]);
+void	calc_down_border(char *bound_part, char matrix[4][4]);
+int		calc_boundary(char boundary[4][4], char c_permed_matrix[4][4]);
+int		is_matching(char boundary[4][4], char u_bound[4][4]);
 #endif
