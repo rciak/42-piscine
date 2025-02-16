@@ -6,7 +6,7 @@
 /*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 22:52:51 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/16 10:20:30 by Rene Ciak        ###   ########.fr       */
+/*   Updated: 2025/02/16 11:11:17 by Rene Ciak        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main(int argc, char **argv)
 	char		user_boundaries[NUM_LOOKING_DIRECTIONS][SIZE];
 	char		solution[SIZE][SIZE];
 	char		the_matrix[NUM_OF_BASIC_MATRICES][SIZE][SIZE];
-	t_gen_perms	gen_perms;
+	t_perm	gen_perms;
 
 	if (!st_check_input_validity(argc, argv[1]))
 	{
@@ -31,7 +31,7 @@ int main(int argc, char **argv)
 	set_the_matrix(the_matrix);
 	set_row_perm(gen_perms.row_perm);
 	set_col_perm(gen_perms.col_perm);
-	if (!find_solution(solution, the_matrix, gen_perms))
+	if (!find_solution(user_boundaries, solution, the_matrix, gen_perms))
 	{
 		write(2, "Error\n", 6);
 		return (-2);

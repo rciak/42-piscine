@@ -6,7 +6,7 @@
 /*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 22:42:28 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/16 09:37:45 by Rene Ciak        ###   ########.fr       */
+/*   Updated: 2025/02/16 11:07:59 by Rene Ciak        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,12 +28,13 @@ typedef struct s_gen_perms
 {
 	char	row_perm[6][SIZE];
 	char	col_perm[24][SIZE];
-}	t_gen_perms;
+}	t_perm;
 
 int		check_input_validity(char *arg);
 void	clear_solution(char **solution);
 void	set_the_matrix(char ***the_matrix);
 void	set_row_perm(char **row_perm);
 void	set_col_perm(char **col_perm);
-void	print_solution(char **solution);
+int		find_solution(char **u_bound, char **sol, char ***matrix, t_perm perm);
+void	print_solution(char **solution);	
 #endif

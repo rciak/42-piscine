@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_solution.c                                   :+:      :+:    :+:   */
+/*   find_solution.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
+/*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/02/16 11:06:45 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/16 11:06:46 by reciak           ###   ########.fr       */
+/*   Created: 2025/02/16 11:06:30 by reciak            #+#    #+#             */
+/*   Updated: 2025/02/16 11:11:20 by Rene Ciak        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "rush01.h"
 
-void	print_solution(char **solution)
+int		find_solution(char **u_bound, char **sol, char ***matrix, t_perm perm)
 {
 	
 }
