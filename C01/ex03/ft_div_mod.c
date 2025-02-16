@@ -6,12 +6,12 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 00:07:51 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/14 00:09:54 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/16 23:12:25 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 void	ft_div_mod(int a, int b, int *div, int *mod)
 {
-	div = a / b;
-	mod = a % b;
+	*div = a / b;
+	*mod = a % b;
 }
