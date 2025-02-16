@@ -6,11 +6,9 @@
 /*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 10:01:53 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/16 20:14:21 by leberton         ###   ########.fr       */
+/*   Updated: 2025/02/16 20:30:42 by Rene Ciak        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-#include "rush01.h"
 
 static void	st_fill(char *line, char *values);
 
