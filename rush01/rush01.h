@@ -6,7 +6,7 @@
 /*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 22:42:28 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/16 12:07:49 by Rene Ciak        ###   ########.fr       */
+/*   Updated: 2025/02/16 12:26:39 by Rene Ciak        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,5 +38,7 @@ void	set_the_matrix(char ***the_matrix);
 void	set_row_perm(char **row_perm);
 void	set_col_perm(char **col_perm);
 int		find_solution(char **u_bound, char **sol, char ***matrix, t_perm perm);
-void	print_solution(char **solution);	
+void	print_solution(char **solution);
+int		calc_boundary(char **boundary, char **c_permed_matrix);
+int		is_matching(char **boundary, char **u_bound);
 #endif

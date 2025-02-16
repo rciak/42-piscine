@@ -6,7 +6,7 @@
 /*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/16 11:06:30 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/16 12:13:03 by Rene Ciak        ###   ########.fr       */
+/*   Updated: 2025/02/16 12:21:42 by Rene Ciak        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,3 +60,22 @@ static int	st_iter_perm(char **b_mat, u_bound, sol, perm)
 	return (0);
 }
 
+static int	st_iter_perm(char **b_mat, char **u_bnd, char **sol, t_pterm perm)
+{
+
+}
+
+static void	st_permute_rows(char **r_permed_matrix, char *perm, char **b_mat)
+{
+
+}
+
+static void	st_permute_cols(char **c_permed_matrix, char *perm, char **r_p_mat)
+{
+
+}
+
+static void	st_set_solution(char **sol, char **c_permed)
+{
+	
+}
