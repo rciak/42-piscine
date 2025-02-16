@@ -6,7 +6,7 @@
 /*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/15 22:52:51 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/16 14:26:54 by leberton         ###   ########.fr       */
+/*   Updated: 2025/02/16 15:30:02 by Rene Ciak        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main(int argc, char **argv)
 		return (-1);
 	}
 	store_user_boundaries(user_boundaries, argv[1]);
-	clear_solution(solution);
+	reset_matrix(solution);
 	set_the_matrix(the_matrix);
 	set_row_perm(gen_perms.row_perm);
 	set_col_perm(gen_perms.col_perm);
