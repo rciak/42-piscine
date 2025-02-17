@@ -6,9 +6,11 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/14 00:08:29 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/17 18:24:22 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/17 22:51:01 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include <stdio.h>
 
 void	ft_div_mod(int a, int b, int *div, int *mod);
 

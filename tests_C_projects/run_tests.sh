@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Some parts of this scripts were created by Perplexity with the promts
+# Some parts of this scripts were created by Perplexity with the promts and somewhat editied
 #
 #   Good evening. Do you have time and resources to help me building some testing script
 #
@@ -25,14 +25,25 @@ fi
 
 PROJECT_NAME=$1
 
-# Create the new directory for tests
+# Create (anew) the new directory for tests
 NEW_DIR="../${PROJECT_NAME}_with_tests"
-mkdir -p "$NEW_DIR"
+rm -fr "$NEW_DIR"
+mkdir "$NEW_DIR"
 
 # Copy subdirectories of the form ex* from the original project directory
 for dir in ../"$PROJECT_NAME"/ex*; do
-    if [ -d "$dir" ]; then
-        cp -r "$dir" "$NEW_DIR"
-    fi
+    cp -r "$dir" "$NEW_DIR"
 done
+
+##
+## Own stuff
+##
+
+#Add the test files (containing the testing  main  function) to where they belong
+for f in ../"$PROJECT_NAME"_with_tests/ex*; do 
+    ex_folder=$(basename "$f")
+    cp "$PROJECT_NAME"_"$ex_folder".c "$NEW_DIR"/"$ex_folder"
+done
+
+
 
