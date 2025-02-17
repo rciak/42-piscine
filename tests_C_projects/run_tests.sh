@@ -30,20 +30,25 @@ NEW_DIR="../${PROJECT_NAME}_with_tests"
 rm -fr "$NEW_DIR"
 mkdir "$NEW_DIR"
 
-# Copy subdirectories of the form ex* from the original project directory
+# Copy subdirectories of the form ex* from the original project directory to NEW_DIR
 for dir in ../"$PROJECT_NAME"/ex*; do
     cp -r "$dir" "$NEW_DIR"
 done
 
 ##
-## Own stuff
+## Own stuff, perplexity did not do what I had in mind. ;-)
 ##
 
 #Add the test files (containing the testing  main  function) to where they belong
-for f in ../"$PROJECT_NAME"_with_tests/ex*; do 
-    ex_folder=$(basename "$f")
-    cp "$PROJECT_NAME"_"$ex_folder".c "$NEW_DIR"/"$ex_folder"
+for dir in "$NEW_DIR"/ex*; do 
+    ex_folder=$(basename "$dir")
+    file="$PROJECT_NAME"_"$ex_folder".c
+    cp "$file" "$NEW_DIR"/"$ex_folder"
 done
 
-
-
+#Compile the tests
+for dir in "$NEW_DIR"/ex*; do
+    ex_folder=$(basename "$dir")
+    out_file=test_"$PROJECT_NAME"_"$ex_folder"
+    cc -Wall -Wextra -Werror -o $dir/"$out_file" "$dir"/*.c
+done
