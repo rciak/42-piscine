@@ -29,7 +29,7 @@ int	main(void)
 	printf("before calling ft_div_mod(x, y) the var y is: %d\n", y);
 	printf("before calling ft_div_mod(x, y) the var res_div is: %d\n", res_div);
 	printf("before calling ft_div_mod(x, y) the var res_mod is: %d\n", res_mod);
-	printf("--------------------------------------------------------------------");
+	printf("--------------------------------------------------------------------\n");
 	printf("after calling ft_div_mod(x, y) the var res_div is:  %d\n", res_div);
 	printf("before calling ft_div_mod(x, y) the var res_mod is: %d\n", res_mod);
 }

@@ -16,8 +16,8 @@ char	*ft_strcpy(char *dest, char *src);
 
 int	main(void)
 {	
-	char	copy_with_too_less_mem[5];
 	char	copy[6 + 1];
+	char	copy_with_too_less_mem[5];
 	char	*ori;
 
 	ori="Hello!";
@@ -30,7 +30,7 @@ int	main(void)
 	printf("--------------------------------------------\n");
 	printf("calling ft_strcpy(copy_with_too_less_mem, ori)\n");
 	ft_strcpy(copy_with_too_less_mem, ori);
-	printf("   ori:  %p |%s|\n", ori, ori);
-	printf("   copy: %p |%s|\n", copy, copy);
-	printf("   copy: %p |%s|\n", copy_with_too_less_mem, copy_with_too_less_mem);
+	printf("   ori:                    %p |%s|\n", ori, ori);
+	printf("   copy:                   %p |%s|\n", copy, copy);
+	printf("   copy_with_too_less_mem: %p |%s|\n", copy_with_too_less_mem, copy_with_too_less_mem);
 }
