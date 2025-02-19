@@ -27,13 +27,15 @@ PROJECT_NAME=$1
 
 # Create (anew) the new directory for tests
 NEW_DIR="../${PROJECT_NAME}_with_tests"
-echo "Creating directory $NEW_DIR"
+echo -e "Creating directory\n  $NEW_DIR"
 rm -fr "$NEW_DIR"
 mkdir "$NEW_DIR"
 
 # Copy subdirectories of the form ex* from the original project directory to NEW_DIR
-echo "Copying ex00, ex01, ... folders to $NEW_DIR"
+echo
+echo "Copying subfolders of  ../$PROJECT_NAME  to  $NEW_DIR"
 for dir in ../"$PROJECT_NAME"/ex*; do
+	echo "  $dir"
     cp -r "$dir" "$NEW_DIR"
 done
 
@@ -42,24 +44,32 @@ done
 ##
 
 #Add the test files (containing the testing  main  function) to where they belong
+echo
+echo "Copying test sourcefiles, containing  int main ...  :"
 for dir in "$NEW_DIR"/ex*; do 
     ex_folder=$(basename "$dir")
     file="$PROJECT_NAME"_"$ex_folder".c
-    echo Copying: "$file" --> "$NEW_DIR"/"$ex_folder"
+    echo "  $file  -->  $NEW_DIR"/"$ex_folder"
     cp "$file" "$NEW_DIR"/"$ex_folder"
 done
 
 #Compile the tests and store compile command in  compile_command.sh
+echo
+echo "Compiling:"
 for dir in "$NEW_DIR"/ex*; do
     ex_folder=$(basename "$dir")
     out_file=test_"$PROJECT_NAME"_"$ex_folder"
     compile_cmd_file='quick_recompile.sh'
-    echo "#!/bin/bash"                                                          > "$dir/$compile_cmd_file"
+    echo "#!/bin/bash"                                               > "$dir/$compile_cmd_file"
     chmod u+x "$dir/$compile_cmd_file"
-    echo                "cc -Wall -Wextra -Werror -o $out_file *.c"            >> "$dir/$compile_cmd_file"
-    echo "Compiling via: cc -Wall -Wextra -Werror -o $dir/$out_file $dir/*.c"
+    echo                "cc -Wall -Wextra -Werror -o $out_file *.c" >> "$dir/$compile_cmd_file"
+    echo "  cc -Wall -Wextra -Werror -o $dir/$out_file $dir/*.c"
     cc -Wall -Wextra -Werror -o "$dir/$out_file" "$dir"/*.c
 done
 
-#Open file viewer 
+#Open file viewer
+echo 
+echo "Opening prepared Folder. Happy testing. ;-) "
+echo
+sleep 1
 open "$NEW_DIR"
