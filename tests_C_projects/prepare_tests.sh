@@ -53,6 +53,16 @@ for dir in "$NEW_DIR"/ex*; do
     cp "$file" "$NEW_DIR"/"$ex_folder"
 done
 
+#Add also the file test.h to the just created copies of the testing C source files
+echo
+echo "Copying test.h"
+for dir in "$NEW_DIR"/ex*; do 
+    ex_folder=$(basename "$dir")
+    file='test.h'
+    echo "  $file  -->  $NEW_DIR"/"$ex_folder"
+    cp "$file" "$NEW_DIR"/"$ex_folder"
+done
+
 #Compile the tests and store compile command in  compile_command.sh
 echo
 echo "Compiling:"
