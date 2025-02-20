@@ -81,7 +81,7 @@ done
 echo 
 echo "Open prepared Folder? [y/n]"
 read -n 1 -s answer
-if [[ answer == "" || answer == 'y' || answer == 'Y' ]];
+if [[ "$answer" == "" || "$answer" == 'y' || "$answer" == 'Y' ]];
 then
   echo
   echo "Happy testing. ;-)"
