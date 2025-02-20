@@ -79,7 +79,15 @@ done
 
 #Open file viewer
 echo 
-echo "Opening prepared Folder. Happy testing. ;-) "
-echo
-sleep 1
-open "$NEW_DIR"
+echo "Open prepared Folder? [y/n]"
+read -n 1 -s answer
+if [[ answer == "" || answer == 'y' || answer == 'Y' ]];
+then
+  echo
+  echo "Happy testing. ;-)"
+  sleep 1
+  open "$NEW_DIR"
+else
+  echo
+  echo "Happy testing. ;-)"
+fi
