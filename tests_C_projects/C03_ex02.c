@@ -6,7 +6,7 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 22:06:32 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/20 22:45:46 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/20 23:31:52 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	main(int argc, char **argv)
 	strcpy(dest_strcat, argv[1]);
 	strcpy(dest_ft_strcat, argv[1]);
 	strcat(dest_strcat, src);
-	strcat(dest_ft_strcat, src);
+	ft_strcat(dest_ft_strcat, src);
 	print_testreport(argv[1], argv[2], dest_strcat, dest_ft_strcat);
 	if (strcmp(dest_strcat, dest_ft_strcat) == 0)
 		return (free(dest_strcat), free(dest_ft_strcat), NO_ERR);
