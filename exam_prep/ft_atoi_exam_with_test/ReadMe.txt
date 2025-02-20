@@ -35,6 +35,9 @@ The file  test_ft_atoi.c  serves as an example for how this can be done.
 
 a) Replace the sample  ft_atoi  (no guarantee, see Section 3) in ft_atoi.c
    by your own ft_atoi (exam version)
+     If you want to omit typing the file  test.h  you can do this by replacing the 
+     speaking words NO_ERR, ARGC_WRONG, TEST_FAILED  by their 
+     their numeric version 0, 1, 2, respectively.
 b) Compile the test via:
      -----------------------------------------------------------------
      cc -Wall -Wextra -Werror -o test_ft_atoi test_ft_atoi.c ft_atoi.c
