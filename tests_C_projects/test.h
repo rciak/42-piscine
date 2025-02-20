@@ -15,7 +15,7 @@
 #include <unistd.h>
 #include <stdio.h>
 
-
+typedef unsigned int t_uint;
 
 
 enum e_OwnErrorCodes
