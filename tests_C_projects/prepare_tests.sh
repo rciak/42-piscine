@@ -91,15 +91,24 @@ done
 
 #Open file viewer
 echo 
-echo "Open prepared Folder? [y/n]"
+echo "Please choose action by pressing a key:"
+echo "  ENTER : Print command for cd'ing to prepared folder"
+echo "  g     : Open in graphical file viewer"
+echo "  n     : Do nothing"
 read -n 1 -s answer
-if [[ "$answer" == "" || "$answer" == 'y' || "$answer" == 'Y' ]];
+if [[ "$answer" == 'g' ]];
 then
-  echo
-  echo "Happy testing. ;-)"
-  sleep 1
-  open "$NEW_DIR"
+    echo
+    echo "Happy testing. ;-)"
+    sleep 1
+    open "$NEW_DIR"
+elif [[ "$answer" == 'n' ]];
+then
+    :
 else
-  echo
-  echo "Happy testing. ;-)"
+    echo
+    echo "Happy testing. ;-)"
+    echo
+    echo "cd $NEW_DIR"
+	cd "$NEW_DIR"
 fi
