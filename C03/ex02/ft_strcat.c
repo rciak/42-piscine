@@ -6,7 +6,7 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 23:25:29 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/20 23:28:05 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/20 23:38:15 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ char *ft_strcat(char *dest, char *src)
 		ptr++;
 	while(*src)
 	{
-		*dest = *src;
-		dest++;
+		*ptr = *src;
+		ptr++;
 		src++;
 	}
 	*dest = '\0';
-	return (ptr);
+	return (dest);
 }

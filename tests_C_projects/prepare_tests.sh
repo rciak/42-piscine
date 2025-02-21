@@ -50,7 +50,19 @@ for dir in "$NEW_DIR"/ex*; do
     ex_folder=$(basename "$dir")
     file="$PROJECT_NAME"_"$ex_folder".c
     echo "  $file  -->  $NEW_DIR"/"$ex_folder"
-    cp "$file" "$NEW_DIR"/"$ex_folder"
+    cp     "$file"     "$NEW_DIR"/"$ex_folder"
+done
+
+#Add "COPY_" in front of all C_files in the "$NEW_DIR/ex*" folders
+echo
+echo "Reduce danger of editing accidentically the wrong files by renaming:"
+for dir in "$NEW_DIR"/ex*; do
+	for file in "$dir"/*.c; do
+		file_bn=$(basename "$file")
+		echo "  $file  ~~>  $dir/COPY_$file_bn"
+		mv     "$file"     "$dir/COPY_$file_bn"
+	done
+	echo "  ----------------------"	
 done
 
 #Add also the file test.h to the just created copies of the testing C source files
