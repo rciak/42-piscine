@@ -44,8 +44,8 @@ static void print_testreport(char *str1, char* str2, char *ori, char *own)
     printf("---------------------------------------------------------------\n");
     printf("Received: |%s|\n", str1);
     printf("Received: |%s|\n", str2);
-    printf("strncat:      |%s|\n", ori);
-    printf("ft_strncat:   |%s|\n", own);
+    printf("strstr:      |%s|\n", ori);
+    printf("ft_strstr:   |%s|\n", own);
     if (ori == own)
         printf("✅\n");
     else
