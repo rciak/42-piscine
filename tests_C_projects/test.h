@@ -6,7 +6,7 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 12:57:58 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/22 16:27:56 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/22 17:16:26 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,12 @@
 #include <stdio.h>
 
 typedef unsigned int t_uint;
+
+typedef struct	s_ft_strlcat
+{
+	int needed_args;
+	
+}				t_ft_strlcat;
 
 
 enum e_OwnErrorCodes
