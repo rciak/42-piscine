@@ -6,10 +6,11 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 12:57:58 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/20 17:18:25 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/22 16:27:56 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
