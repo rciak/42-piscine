@@ -6,7 +6,7 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 01:24:41 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/22 02:20:17 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/22 02:30:27 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,3 @@ static bool	st_is_match(char *cur, char *to_find)
 	}
 	return (true);
 }
-
