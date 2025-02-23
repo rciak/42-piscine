@@ -6,7 +6,7 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 02:32:32 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/23 16:20:30 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/23 17:22:09 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
 		dest++;
 		size--;
 	}
+	if (size <= 1)
+		return (ori_len_dest + len_src);
 	while (*src && size > 1)
 	{
 		*dest = *src;
