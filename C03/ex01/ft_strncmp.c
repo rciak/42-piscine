@@ -6,12 +6,14 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/20 21:40:42 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/20 21:52:10 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/23 15:54:24 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n)
-{
+{	
+	if (n == 0)
+		return (0);
 	while (*s1 && *s2 && n > 1)
 	{
 		if (*s1 != *s2)
