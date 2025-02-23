@@ -84,9 +84,9 @@ for dir in "$NEW_DIR"/ex*; do
     compile_cmd_file='quick_recompile.sh'
     echo "#!/bin/bash"                                               > "$dir/$compile_cmd_file"
     chmod u+x "$dir/$compile_cmd_file"
-    echo                "cc -Wall -Wextra -Werror -o $out_file *.c" >> "$dir/$compile_cmd_file"
-    echo "  cc -Wall -Wextra -Werror -o $dir/$out_file $dir/*.c"
-    cc -Wall -Wextra -Werror -o "$dir/$out_file" "$dir"/*.c
+    echo   "cc -Wall -Wextra -Werror -lbsd -o $out_file *.c"        >> "$dir/$compile_cmd_file"
+    echo "  cc -Wall -Wextra -Werror -lbsd -o $dir/$out_file $dir/*.c"
+    cc -Wall -Wextra -Werror -lbsd -o "$dir/$out_file" "$dir"/*.c
 done
 
 #Open file viewer
