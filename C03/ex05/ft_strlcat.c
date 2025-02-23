@@ -6,7 +6,7 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 02:32:32 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/22 21:49:38 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/22 21:56:45 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
 */
 }
 
-static size_t	my_strlen(char *str)
+static unsigned int	my_strlen(char *str)
 {
 	size_t	len;
 
