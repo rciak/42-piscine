@@ -14,7 +14,7 @@
 
 static unsigned int	my_strlen(char *str);
 
-unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
+unsigned int	ft_strlcat(char *dest, char *src, unsigned int size)
 {
 	unsigned int	ori_len_dest;
 	unsigned int	len_src;
