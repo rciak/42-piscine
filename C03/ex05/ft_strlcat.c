@@ -6,7 +6,7 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/22 02:32:32 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/22 21:56:45 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/23 16:20:30 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,20 +35,6 @@ unsigned int ft_strlcat(char *dest, char *src, unsigned int size)
 	}
 	*dest = '\0';
 	return (ori_len_dest + len_src);
-/*
-
-	size_t	i_orig_nullterminator;
-	size_t	j;
-
-	i_orig_nullterminator = my_strlen(dest);
-	j = 0;
-	while (j < size - i_orig_nullterminator - 1 && src[j])
-	{
-		dest[i_orig_nullterminator + j] = src[j];
-		j++;
-	}	
-	dest[j] = '\0';
-*/
 }
 
 static unsigned int	my_strlen(char *str)
