@@ -30,9 +30,9 @@ int	main(int argc, char **argv)
 
 	//After here: Still in more ugly first try style
    	char			*src;
-    char			*dest_strlcat;
-    char			*dest_ft_strlcat;
-    int				nb; 
+	char			*dest_strlcat;
+	char			*dest_ft_strlcat;
+	int			nb; 
 
     src = argv[2];
     dest_strlcat = malloc(strlen(argv[1]) + strlen(src) + 1); 
@@ -40,8 +40,12 @@ int	main(int argc, char **argv)
     strcpy(dest_strlcat, argv[1]);
     strcpy(dest_ft_strlcat, argv[1]);
     nb = atoi(argv[3]);
-    strlcat(dest_strlcat, src, nb);
-    ft_strlcat(dest_ft_strlcat, src, nb);
+    
+    unsigned int reval_ori = strlcat(dest_strlcat, src, nb);
+    unsigned int reval_own = ft_strlcat(dest_ft_strlcat, src, nb);
+    printf("reval_ori: %d\n", reval_ori);
+    printf("reval_own: %d\n", reval_own);
+    
     printf("Testreport für received nb: %d\n", nb);
     print_testreport(dest_strlcat, dest_ft_strlcat);
     if (strcmp(dest_strlcat, dest_ft_strlcat) == 0)

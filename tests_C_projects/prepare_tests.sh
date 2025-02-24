@@ -67,12 +67,16 @@ done
 
 #Add also the file test.h to the just created copies of the testing C source files
 echo
-echo "Copying test.h"
-for dir in "$NEW_DIR"/ex*; do 
+echo "Copying test.h and tools.c"
+for dir in "$NEW_DIR"/ex*; do
     ex_folder=$(basename "$dir")
     file='test.h'
-    echo "  $file  -->  $NEW_DIR"/"$ex_folder"
+    file2='tools.c'
+    echo "  $file   -->  $NEW_DIR"/"$ex_folder"
     cp "$file" "$NEW_DIR"/"$ex_folder"
+    echo "  $file2  -->  $NEW_DIR"/"$ex_folder"
+    cp "$file2" "$NEW_DIR"/"$ex_folder"
+
 done
 
 #Compile the tests and store compile command in  compile_command.sh
@@ -81,10 +85,17 @@ echo "Compiling:"
 for dir in "$NEW_DIR"/ex*; do
     ex_folder=$(basename "$dir")
     out_file=test_"$PROJECT_NAME"_"$ex_folder"
-    compile_cmd_file='quick_recompile.sh'
+    compile_cmd_file='normal_recompile.sh'
+    compile_with_g_flag_cmd_file='debug_recompile.sh'
+    ####
     echo "#!/bin/bash"                                               > "$dir/$compile_cmd_file"
     chmod u+x "$dir/$compile_cmd_file"
     echo   "cc -Wall -Wextra -Werror -lbsd -o $out_file *.c"        >> "$dir/$compile_cmd_file"
+    ####
+    echo "#!/bin/bash"                                               > "$dir/$compile_with_g_flag_cmd_file"
+    chmod u+x "$dir/$compile_with_g_flag_cmd_file"
+    echo   "cc -Wall -Wextra -Werror -lbsd -g -o $out_file *.c"     >> "$dir/$compile_with_g_flag_cmd_file"
+    ####
     echo "  cc -Wall -Wextra -Werror -lbsd -o $dir/$out_file $dir/*.c"
     cc -Wall -Wextra -Werror -lbsd -o "$dir/$out_file" "$dir"/*.c
 done
