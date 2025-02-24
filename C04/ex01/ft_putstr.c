@@ -6,14 +6,14 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 19:27:52 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/24 23:40:07 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/24 23:53:31 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>    // write
 #include <stddef.h>    // size_t
 
-static size_t st_my_strlen(char *str);
+static size_t	st_my_strlen(char *str);
 
 void	ft_putstr(char *str)
 {
@@ -23,12 +23,12 @@ void	ft_putstr(char *str)
 	write(1, str, len);
 }
 
-static size_t st_my_strlen(char *str)
+static size_t	st_my_strlen(char *str)
 {
 	size_t	len;
 
 	len = 0;
-	while(str[len])
+	while (str[len])
 		len++;
-	return(len);
+	return (len);
 }
