@@ -6,7 +6,7 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 12:57:58 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/24 22:11:15 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/24 23:50:35 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,14 @@ void	print_testreport(char *ori, char *own);
 
 typedef unsigned int	t_uint;
 typedef	unsigned long	t_ulong;
+
+//C04, ex01
+typedef struct	s_ft_putstr
+{
+	int			needed_args;
+	const char	*own_name;
+	int			(*own_func)(char *);
+}				t_ft_putstr;
 
 //C04, ex00
 typedef struct	s_ft_strlen
