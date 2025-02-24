@@ -17,7 +17,7 @@ unsigned int	ft_strlcat(char *dest, char *src, unsigned int size);
 static void st_set_data(t_ft_strlcat *data);
 static bool	st_num_of_actual_args_is(int expected, int argc);
 static void	st_print_received_arguments(int argc, char **argv);
-static void print_testreport(char *ori, char *own);
+static void ft_print_testreport(char *ori, char *own);
 
 int	main(int argc, char **argv)
 {
@@ -47,7 +47,7 @@ int	main(int argc, char **argv)
     printf("reval_own: %d\n", reval_own);
     
     printf("Testreport für received nb: %d\n", nb);
-    print_testreport(dest_strlcat, dest_ft_strlcat);
+    ft_print_testreport(dest_strlcat, dest_ft_strlcat);
     if (strcmp(dest_strlcat, dest_ft_strlcat) == 0)
         return (free(dest_strlcat), free(dest_ft_strlcat), NO_ERR);
     else
@@ -87,7 +87,7 @@ static bool st_num_of_actual_args_is(int expected, int argc)
 	return (true);
 }
 
-static void print_testreport(char *ori, char *own)
+static void ft_print_testreport(char *ori, char *own)
 {
    printf("strlcat:      |%s|\n", ori);
     printf("ft_strlcat:   |%s|\n", own);

@@ -14,7 +14,7 @@
 
 char *ft_strcat(char *dest, char *src);
 
-static void	print_testreport(char *str1, char *str2, char *ori, char *own);
+static void	ft_print_testreport(char *str1, char *str2, char *ori, char *own);
 
 int	main(int argc, char **argv)
 {
@@ -35,14 +35,14 @@ int	main(int argc, char **argv)
 	strcpy(dest_ft_strcat, argv[1]);
 	strcat(dest_strcat, src);
 	ft_strcat(dest_ft_strcat, src);
-	print_testreport(argv[1], argv[2], dest_strcat, dest_ft_strcat);
+	ft_print_testreport(argv[1], argv[2], dest_strcat, dest_ft_strcat);
 	if (strcmp(dest_strcat, dest_ft_strcat) == 0)
 		return (free(dest_strcat), free(dest_ft_strcat), NO_ERR);
 	else
 		return (free(dest_strcat), free(dest_ft_strcat), TEST_FAILED);
 }
 
-static void	print_testreport(char *str1, char* str2, char *ori, char *own)
+static void	ft_print_testreport(char *str1, char* str2, char *ori, char *own)
 {
 	printf("---------------------------------------------------------------\n");
 	printf("Received: |%s|\n", str1);

@@ -13,7 +13,7 @@
 #include "test.h"
 
 char		*ft_strstr(char *str, char *to_find);
-static void	print_testreport(char *str1, char *str2, char *ori, char *own);
+static void	ft_print_testreport(char *str1, char *str2, char *ori, char *own);
 
 int	main(int argc, char **argv)
 {
@@ -31,7 +31,7 @@ int	main(int argc, char **argv)
 	needle = argv[2];
 	ori = strstr(haystack, needle);
 	own = ft_strstr(haystack, needle);
-	print_testreport(haystack, needle, ori, own);
+	ft_print_testreport(haystack, needle, ori, own);
 	if (ori == own)
 		return (NO_ERR);
 	else
@@ -39,7 +39,7 @@ int	main(int argc, char **argv)
 
 }
 
-static void print_testreport(char *str1, char* str2, char *ori, char *own)
+static void ft_print_testreport(char *str1, char* str2, char *ori, char *own)
 {
     printf("---------------------------------------------------------------\n");
     printf("Received: |%s|\n", str1);

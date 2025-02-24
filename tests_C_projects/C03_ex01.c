@@ -14,7 +14,7 @@
 
 int	ft_strncmp(char *s1, char *s2, unsigned int n);
 
-static void	print_testreport(char *s1, char *s2, t_uint n, int ori, int own);
+static void	ft_print_testreport(char *s1, char *s2, t_uint n, int ori, int own);
 
 int	main(int argc, char **argv)
 {
@@ -35,14 +35,14 @@ int	main(int argc, char **argv)
 
 	ori = strncmp(str1, str2, n);
 	own = ft_strncmp(str1, str2, n);
-	print_testreport(str1, str2, n, ori, own);
+	ft_print_testreport(str1, str2, n, ori, own);
 	if (own == ori)
 		return (NO_ERR);
 	else
 		return (TEST_FAILED);
 }
 
-static void	print_testreport(char *s1, char* s2, t_uint n,  int ori, int own)
+static void	ft_print_testreport(char *s1, char* s2, t_uint n,  int ori, int own)
 {
 	printf("---------------------------------------------------------------\n");
 	printf("Received: |%s|\n", s1);
