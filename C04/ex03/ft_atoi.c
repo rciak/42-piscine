@@ -6,7 +6,7 @@
 /*   By: Rene Ciak <rciakAT42Vienna@web.de>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/09 11:47:44 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/25 12:44:34 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/25 15:17:50 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ int	ft_atoi(char *s)
 	int			sign_factor;
 	long long	nbr;
 
-	if (s == NULL)
-		return (0);
 	while (*s == ' ' || *s == '\n' || *s == '\t'
 		|| *s == '\v' || *s == '\f' || *s == '\r' )
 		s++;
