@@ -6,20 +6,20 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/24 23:59:50 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/25 00:15:44 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/25 12:00:24 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void ft_putnbr(int nb)
+void	ft_putnbr(int nb)
 {
 	char	digit;
 
 	if (nb == -2147483648)
 	{
 		write(1, "-2147483648", 11);
-		return;
+		return ;
 	}
 	if (nb < 0)
 	{
