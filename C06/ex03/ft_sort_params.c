@@ -6,7 +6,7 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 12:38:34 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/26 18:11:00 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/26 18:19:46 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,9 @@ int	main(int argc, char **argv)
 	char	*cur_content;
 	int		i;
 
-	cur_content = NULL;
+	if (argc < 1 + 1)
+		return (0);
+	cur_content = argv[1];
 	while (st_find_next(&cur_content, argc, argv))
 	{
 		i = 1;
