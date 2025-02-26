@@ -6,7 +6,7 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 12:38:34 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/26 22:40:37 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/26 22:50:07 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 static int	st_ft_strcmp(char *s1, char *s2);
 static void	st_var_putstr(char *str);
 static bool	st_find_next(char **p_cur_content, int argc, char **argv);
-static bool	st_found_successor(char *p_cur, int argc, char **argv, char* pot);
+static bool	st_found_successor(char *p_cur, int argc, char **argv, char *pot);
 
 int	main(int argc, char **argv)
 {
@@ -43,9 +43,6 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
-
-
-
 static bool	st_find_next(char **p_cur_content, int argc, char **argv)
 {
 	int	i;
@@ -60,8 +57,8 @@ static bool	st_find_next(char **p_cur_content, int argc, char **argv)
 				return (true);
 			i++;
 		}
-	}	
-	i =  1;
+	}
+	i = 1;
 	while (i < argc)
 	{
 		if (st_found_successor(*p_cur_content, argc, argv, argv[i]))
@@ -78,7 +75,7 @@ static bool	st_find_next(char **p_cur_content, int argc, char **argv)
 static bool	st_found_successor(char *cur, int argc, char **argv, char *pot)
 {
 	int		k;
-	
+
 	if (st_ft_strcmp(cur, pot) >= 0)
 		return (false);
 	k = 1;
