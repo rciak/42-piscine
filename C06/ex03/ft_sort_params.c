@@ -6,25 +6,24 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 12:38:34 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/26 17:52:35 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/26 18:11:00 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>    // write
 #include <stddef.h>    // size_t, NULL
-#include <bool.h>      // true, false
-
+#include <stdbool.h>   // true, false
 
 static int	st_ft_strcmp(char *s1, char *s2);
 static void	st_var_putstr(char *str);
 static bool	st_find_next(char **p_cur_content, int argc, char **argv);
-static bool	st_found_successor(char* cur, int argc, char **argv, size_t i);
+static bool	st_found_successor(char *cur, int argc, char **argv, size_t i);
 
 int	main(int argc, char **argv)
 {
-	char 	*cur_content;
-	size_t	i;
-	
+	char	*cur_content;
+	int		i;
+
 	cur_content = NULL;
 	while (st_find_next(&cur_content, argc, argv))
 	{
@@ -43,7 +42,7 @@ int	main(int argc, char **argv)
 
 static bool	st_find_next(char **p_cur_content, int argc, char **argv)
 {
-	size_t	i;
+	int	i;
 
 	i = 1;
 	while (i < argc)
@@ -54,14 +53,14 @@ static bool	st_find_next(char **p_cur_content, int argc, char **argv)
 			return (true);
 		}
 		i++;
-	}	
+	}
 	*p_cur_content = NULL;
 	return (false);
 }
 
-static	bool st_found_successor(char* cur, int argc, char **argv, size_t i)
+static bool	st_found_successor(char *cur, int argc, char **argv, size_t i)
 {
-	size_t	k;
+	int		k;
 	char	*candid;
 
 	candid = argv[i];
@@ -70,7 +69,7 @@ static	bool st_found_successor(char* cur, int argc, char **argv, size_t i)
 	k = 1;
 	while (k < argc)
 	{
-		if (st_ft_strcmp(cur, argv[k] < 0) && st_ft_strcmp(argv[k], candid) < 0)
+		if (st_ft_strcmp(cur, argv[k]) < 0 && st_ft_strcmp(argv[k], candid) < 0)
 			return (false);
 		k++;
 	}
@@ -99,8 +98,5 @@ void	st_var_putstr(char *str)
 	len = 0;
 	while (str[len])
 		len++;
-	return (len);
 	write(1, str, len);
 }
-
-
