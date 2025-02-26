@@ -6,7 +6,7 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 12:38:34 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/26 17:20:50 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/26 17:38:55 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,24 +14,28 @@
 #include <stddef.h>    // size_t, NULL
 #include <bool.h>      // true, false
 
-static bool		st_find_next(char **p_cur_content, int argc, char **argv);
-static bool		st_found_successor(char* cur, int argc, char **argv, size_t i);
-static	size_t	st_count_occurences(char *cur_content, int argc, char **argv);
-static	void	st_print(char *cur_content, size_t occurs);
+static bool	st_find_next(char **p_cur_content, int argc, char **argv);
+static bool	st_found_successor(char* cur, int argc, char **argv, size_t i);
 
 int	main(int argc, char **argv)
 {
 	char 	*cur_content;
-	size_t	occurs;
-
+	size_t	i;
+	
 	cur_content = NULL;
-	occurs = 0;
-	while (st_find_next(&cur_content, argc, argv) != NULL)
+	while (st_find_next(&cur_content, argc, argv))
 	{
-		occurs = st_count_occurences(cur_content, argc, argv);
-		st_print(cur_content, occurs);
+		i = 1;
+		while (i < argc)
+		{
+			if (ft_strcmp(cur_content, argv[i]) == 0)
+			{
+				ft_putstr(cur_content);
+				ft_putstr("\n");
+			}
+			i++;
+		}
 	}
-	return (0);
 }
 
 static bool	st_find_next(char **p_cur_content, int argc, char **argv)
@@ -70,25 +74,3 @@ static	bool st_found_successor(char* cur, int argc, char **argv, size_t i)
 	return (true);
 }
 
-static	size_t	st_count_occurences(char *cur_content, int argc, char **argv)
-{
-	size_t	i;
-	size_t	count;
-	
-	i = 1;
-	if (cur_content == NULL)
-		return (0);
-	count = 1;
-	while (i < argc)
-	{
-		if (ft_strcmp(cur_content, argv[i]) == 0)
-			count++;
-		i++;
-	}
-	return (count);
-}
-
-static	void	st_print(char *cur_content, size_t occurs)
-{
-
-}
