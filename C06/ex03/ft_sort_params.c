@@ -54,7 +54,20 @@ static bool	st_find_next(char **p_cur_content, int argc, char **argv)
 
 static	bool st_found_successor(char* cur, int argc, char **argv, size_t i)
 {
+	size_t	k;
+	char	*candidate;
 
+	candidate = argv[i];
+	if (ft_strcmp(cur, candidate) >= 0)
+		return (false);
+	k = 1;
+	while (k < argc)
+	{
+		if (ft_strcmp(cur, argv[k] < 0) && strcmp(argv[k], candidate) < 0)
+			return (false);
+		k++;
+	}
+	return (true);
 }
 
 static	size_t	st_count_occurences(char *cur_content, int argc, char **argv)
