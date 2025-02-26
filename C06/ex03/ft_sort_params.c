@@ -6,7 +6,7 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 12:38:34 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/26 18:19:46 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/26 21:29:13 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 static int	st_ft_strcmp(char *s1, char *s2);
 static void	st_var_putstr(char *str);
 static bool	st_find_next(char **p_cur_content, int argc, char **argv);
-static bool	st_found_successor(char *cur, int argc, char **argv, size_t i);
+static bool	st_found_successor(char **p_cur, int argc, char **argv, size_t i);
 
 int	main(int argc, char **argv)
 {
@@ -26,7 +26,7 @@ int	main(int argc, char **argv)
 
 	if (argc < 1 + 1)
 		return (0);
-	cur_content = argv[1];
+	cur_content = NULL;
 	while (st_find_next(&cur_content, argc, argv))
 	{
 		i = 1;
@@ -40,6 +40,7 @@ int	main(int argc, char **argv)
 			i++;
 		}
 	}
+	return (0);
 }
 
 static bool	st_find_next(char **p_cur_content, int argc, char **argv)
@@ -49,7 +50,7 @@ static bool	st_find_next(char **p_cur_content, int argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
-		if (st_found_successor(*p_cur_content, argc, argv, i))
+		if (st_found_successor(p_cur_content, argc, argv, i))
 		{
 			*p_cur_content = argv[i];
 			return (true);
@@ -60,18 +61,29 @@ static bool	st_find_next(char **p_cur_content, int argc, char **argv)
 	return (false);
 }
 
-static bool	st_found_successor(char *cur, int argc, char **argv, size_t i)
+static bool	st_found_successor(char **cur, int argc, char **argv, size_t i)
 {
 	int		k;
 	char	*candid;
-
+	
 	candid = argv[i];
-	if (st_ft_strcmp(cur, candid) >= 0)
+	if (*cur == NULL)
+	{
+		*cur = "";
+		k = 1;
+		while (k < argc)
+		{
+			if (st_ft_strcmp(argv[k], "") == 0)
+				return (true);
+			k++;
+		}
+	}	
+	if (st_ft_strcmp(*cur, candid) >= 0)
 		return (false);
 	k = 1;
 	while (k < argc)
 	{
-		if (st_ft_strcmp(cur, argv[k]) < 0 && st_ft_strcmp(argv[k], candid) < 0)
+		if (st_ft_strcmp(*cur, argv[k]) < 0 && st_ft_strcmp(argv[k], candid) < 0)
 			return (false);
 		k++;
 	}
