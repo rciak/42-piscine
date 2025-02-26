@@ -6,7 +6,7 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 12:38:34 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/26 16:29:12 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/26 17:06:12 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,13 @@ int	main(int argc, char **argv)
 	size_t	occurs;
 
 	cur_content = NULL;
-	index = 0;
 	occurs = 0;
 	while (st_find_next(&cur_content, argc, argv) != NULL)
 	{
 		occurs = st_count_occurences(cur_content, argc, argv);
 		st_print(cur_content, occurs);
 	}
+	return (0);
 }
 
 static bool	st_find_next(char **p_cur_content, int argc, char **argv)
