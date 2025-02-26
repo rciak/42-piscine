@@ -6,7 +6,7 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 11:56:37 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/26 12:05:39 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/26 12:09:35 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,12 @@ int	main(int argc, char **argv)
 	if (argc == 1 + 0)
 		return (0);
 	i = 1;
-	while (i <= argc)
+	while (i < argc)
 	{
 		len = st_my_strlen(argv[i]);
 		write (1, argv[i], len);
 		write (1, "\n", 1);
+		i++;
 	}
 }
 
