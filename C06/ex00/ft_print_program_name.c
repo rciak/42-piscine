@@ -6,7 +6,7 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 11:41:40 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/26 11:46:50 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/26 11:51:11 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,10 @@ int	main(int argc, char **argv)
 {
 	size_t	len;
 
+	(void) argc;
 	len = st_my_strlen(argv[0]);
 	write (1, argv[0], len);
+	write (1, "\n", 1);
 }
 
 static size_t	st_my_strlen(char *str)
