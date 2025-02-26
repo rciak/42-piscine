@@ -6,7 +6,7 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 12:38:34 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/26 17:06:12 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/26 17:20:50 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ static	bool st_found_successor(char* cur, int argc, char **argv, size_t i)
 	k = 1;
 	while (k < argc)
 	{
-		if (ft_strcmp(cur, argv[k] < 0) && strcmp(argv[k], candidate) < 0)
+		if (ft_strcmp(cur, argv[k] < 0) && ft_strcmp(argv[k], candidate) < 0)
 			return (false);
 		k++;
 	}
@@ -72,7 +72,20 @@ static	bool st_found_successor(char* cur, int argc, char **argv, size_t i)
 
 static	size_t	st_count_occurences(char *cur_content, int argc, char **argv)
 {
-
+	size_t	i;
+	size_t	count;
+	
+	i = 1;
+	if (cur_content == NULL)
+		return (0);
+	count = 1;
+	while (i < argc)
+	{
+		if (ft_strcmp(cur_content, argv[i]) == 0)
+			count++;
+		i++;
+	}
+	return (count);
 }
 
 static	void	st_print(char *cur_content, size_t occurs)
