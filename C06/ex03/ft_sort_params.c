@@ -6,7 +6,7 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/26 12:38:34 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/26 22:15:03 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/26 22:40:37 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 static int	st_ft_strcmp(char *s1, char *s2);
 static void	st_var_putstr(char *str);
 static bool	st_find_next(char **p_cur_content, int argc, char **argv);
-static bool	st_found_successor(char **p_cur, int argc, char **argv, char* pot);
+static bool	st_found_successor(char *p_cur, int argc, char **argv, char* pot);
 
 int	main(int argc, char **argv)
 {
@@ -43,14 +43,28 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
+
+
+
 static bool	st_find_next(char **p_cur_content, int argc, char **argv)
 {
 	int	i;
 
-	i = 1;
+	if (*p_cur_content == NULL)
+	{
+		*p_cur_content = "";
+		i = 1;
+		while (i < argc)
+		{
+			if (st_ft_strcmp(argv[i], "") == 0)
+				return (true);
+			i++;
+		}
+	}	
+	i =  1;
 	while (i < argc)
 	{
-		if (st_found_successor(p_cur_content, argc, argv, argv[i]))
+		if (st_found_successor(*p_cur_content, argc, argv, argv[i]))
 		{
 			*p_cur_content = argv[i];
 			return (true);
@@ -61,27 +75,16 @@ static bool	st_find_next(char **p_cur_content, int argc, char **argv)
 	return (false);
 }
 
-static bool	st_found_successor(char **p_cur, int argc, char **argv, char *pot)
+static bool	st_found_successor(char *cur, int argc, char **argv, char *pot)
 {
 	int		k;
 	
-	if (*p_cur == NULL)
-	{
-		*p_cur = "";
-		k = 1;
-		while (k < argc)
-		{
-			if (st_ft_strcmp(argv[k], "") == 0)
-				return (true);
-			k++;
-		}
-	}	
-	if (st_ft_strcmp(*p_cur, pot) >= 0)
+	if (st_ft_strcmp(cur, pot) >= 0)
 		return (false);
 	k = 1;
 	while (k < argc)
 	{
-		if (st_ft_strcmp(*p_cur, argv[k]) < 0 && st_ft_strcmp(argv[k], pot) < 0)
+		if (st_ft_strcmp(cur, argv[k]) < 0 && st_ft_strcmp(argv[k], pot) < 0)
 			return (false);
 		k++;
 	}
