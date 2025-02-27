@@ -6,11 +6,13 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 12:56:25 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/27 19:11:09 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/27 19:45:18 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>    // malloc
+#include <stdbool.h>   // true, false
+
 
 static size_t	st_count_words(char *str, char *charset);
 static size_t	st_is_sep(char c, char* charset);
@@ -55,7 +57,13 @@ static size_t	st_count_words(char *str, char *charset)
 
 static size_t	st_is_sep(char c, char* charset);
 {
-
+	while(*charset)
+	{
+		if (c == *charset)
+			return (true);
+		charset++;
+	}
+	return (false);
 }
 
 
