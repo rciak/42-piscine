@@ -6,7 +6,7 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 12:56:25 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/27 21:22:26 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/27 21:37:55 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char **ft_split(char *str, char *charset)
 			str++;
 		word_len = st_word_len(str, charset);
 		array[i] = malloc((word_len + 1) * sizeof(char));
-		ft_strncpy(array[i], str, word_len + 1);
+		ft_strncpy(array[i], str, word_len);
 		if (array[i] == NULL)
 			return (array);
 		while (!st_is_sep(*str, charset) && *str != '\0')
