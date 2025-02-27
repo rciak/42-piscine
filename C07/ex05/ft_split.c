@@ -6,7 +6,7 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 12:56:25 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/27 19:52:50 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/27 21:22:26 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,10 @@
 static size_t	st_count_words(char *str, char *charset);
 static size_t	st_is_sep(char c, char* charset);
 static size_t	st_word_len(char *str, char* charset);
-static void		st_free_heap(char **array, i);
+char			*ft_strncpy(char *dest, char *src, unsigned int n);
 
+// Since we are not allowed to use free the stuff is somewhat flawed 
+// from the very beginning if malloc fails..., cf. below
 char **ft_split(char *str, char *charset)
 {
 	size_t	i;
@@ -37,11 +39,9 @@ char **ft_split(char *str, char *charset)
 			str++;
 		word_len = st_word_len(str, charset);
 		array[i] = malloc((word_len + 1) * sizeof(char));
+		ft_strncpy(array[i], str, word_len + 1);
 		if (array[i] == NULL)
-		{
-			st_free_heap(array, i);
-			return (NULL);
-		}
+			return (array);
 		while (!st_is_sep(*str, charset) && *str != '\0')
 			str++;
 		i++;
@@ -66,7 +66,7 @@ static size_t	st_count_words(char *str, char *charset)
 	return (count);
 }
 
-static size_t	st_is_sep(char c, char* charset);
+static size_t	st_is_sep(char c, char* charset)
 {
 	while(*charset)
 	{
@@ -84,9 +84,43 @@ static size_t	st_word_len(char *str, char *charset)
 	count = 0;
 	while (!st_is_sep(str[count], charset) && str[count] != '\0')
 		count++;
+	return (count);
 }
 
+char	*ft_strncpy(char *dest, char *src, unsigned int n)
+{
+	char			*start;
+	unsigned int	i;
+
+	start = dest;
+	i = 0;
+	while (*src && i < n)
+	{
+		*dest = *src;
+		src++;
+		dest++;
+		i++;
+	}
+	while (i < n)
+	{
+		*dest = '\0';
+		dest++;
+		i++;
+	}
+	return (start);
+}
+// REMARK: Normally that functions should be implemented, but 
+//    free is not allowed...
+// --> Checkout  6efec471611bc49f77cd87e3353b334e5adf0154
+//     for a drafted version where it was intended to call  st_free_heap
+/*
 static void		st_free_heap(char **array, i)
 {
-
+	while (i > 0)
+	{
+		i--;
+		free()
+	}
+	
 }
+*/
