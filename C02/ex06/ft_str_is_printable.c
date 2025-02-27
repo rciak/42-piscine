@@ -6,11 +6,11 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 23:42:31 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/28 00:02:27 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/28 00:09:06 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_printable(char *str);
+int	ft_str_is_printable(char *str)
 {
 	while (*str)
 	{
