@@ -6,7 +6,7 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 20:53:26 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/27 21:03:37 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/27 21:26:18 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ int main (int argc, char **argv)
 	int		i;
 	char	**arr;
 
-	if (argc != 1 + 1)
+	if (argc != 1 + 2)
 	{
-		fprintf(stderr, "Error: Wrong number of arguments (1 argument needed)");
+		fprintf(stderr, "Error: Wrong number of arguments (2 needed)\n");
 		return (1);
 	}
 	printf("1. received: |%s|", argv[1]);
