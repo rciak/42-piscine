@@ -6,11 +6,11 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 23:38:15 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/28 00:02:03 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/28 00:07:23 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_str_is_uppercase(char *str);
+int	ft_str_is_uppercase(char *str)
 {
 	while (*str)
 	{
