@@ -6,7 +6,7 @@
 /*   By: reciak <reciak@student.42vienna.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/02/27 12:56:25 by reciak            #+#    #+#             */
-/*   Updated: 2025/02/27 19:45:18 by reciak           ###   ########.fr       */
+/*   Updated: 2025/02/27 19:52:50 by reciak           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,18 @@ char **ft_split(char *str, char *charset)
 
 static size_t	st_count_words(char *str, char *charset)
 {
+	size_t	count;
 
+	count = 0;
+	while (*str)
+	{
+		while (st_is_sep(*str, charset))
+			str++;
+		while (!st_is_sep(*str, charset) && *str != '\0')
+			str++;
+		count++;
+	}
+	return (count);
 }
 
 static size_t	st_is_sep(char c, char* charset);
@@ -65,7 +76,6 @@ static size_t	st_is_sep(char c, char* charset);
 	}
 	return (false);
 }
-
 
 static size_t	st_word_len(char *str, char *charset)
 {
