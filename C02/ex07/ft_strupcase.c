@@ -18,5 +18,5 @@ char	*ft_strupcase(char *str)
 			*str = *str - 'a' + 'A';
 		str++;
 	}
-
+	return (str);
 }
