@@ -1,4 +1,4 @@
-# 42-piscine
+# 42-piscine 🌐
 Piscine Feb 2025
 
 # Group Projects
