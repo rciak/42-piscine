@@ -1,0 +1,11 @@
+total 28
+drwxr-xr-x 4 reciak 2025_vienna    97 Feb  3 19:50 exo2
+-rw-r--r-- 1 reciak 2025_vienna 10240 Feb  3 19:37 exo2.tar
+drwxr-xr-x 2 reciak 2025_vienna    58 Feb  3 19:30 local
+drwx--xr-x 2 reciak 2025_vienna    62 Feb  3 19:53 test0
+-rwx--xr-- 1 reciak 2025_vienna     4 Jun  1  2025 test1
+dr-x---r-- 2 reciak 2025_vienna     6 Jun  1  2025 test2
+-r-----r-- 2 reciak 2025_vienna     1 Jun  1  2025 test3
+-rw-r----x 1 reciak 2025_vienna     2 Jun  2  2025 test4
+-r-----r-- 2 reciak 2025_vienna     1 Jun  1  2025 test5
+lrwxrwxrwx 1 reciak 2025_vienna     5 Jun  5  2025 test6 -> test0

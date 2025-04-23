@@ -1,0 +1,8 @@
+total 24
+drwx--xr-x 2 reciak 2025_vienna  6 Jun  1  2025 test0
+-rwx--xr-- 1 reciak 2025_vienna  4 Jun  1  2025 test1
+dr-x---r-- 2 reciak 2025_vienna  6 Jun  1  2025 test2
+-r-----r-- 2 reciak 2025_vienna  1 Jun  1  2025 test3
+-rw-r----x 1 reciak 2025_vienna  2 Jun  2  2025 test4
+-r-----r-- 2 reciak 2025_vienna  1 Jun  1  2025 test5
+lrwxrwxrwx 1 reciak 2025_vienna  5 Feb  3 18:27 test6 -> test0
